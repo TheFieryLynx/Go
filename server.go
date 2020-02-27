@@ -27,7 +27,7 @@ func randomString(len int) string {
 }
 
 func main() {
-	
+
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Hello from Server!")
 	})
@@ -37,14 +37,13 @@ func main() {
 		man.Name = r.URL.Query().Get("name")
 		if len(man.Name) == 0 {
 			man.Name = "anon"
-		} else {
-			man.Date = time.Now().Format("02.01.2006 15:04:05")
-			man.Data = randomString(20)
 		}
+		man.Date = time.Now().Format("02.01.2006 15:04:05")
+		man.Data = randomString(20)
 		fmt.Fprintf(w, "Name: %s\nDate: %s\nData: %s\n\n\n", man.Name, man.Date, man.Data)
 
 		var jsonData []byte
-		jsonData,_ = json.Marshal(man)
+		jsonData, _ = json.Marshal(man)
 		fmt.Fprintf(w, "%s", string(jsonData))
 
 	})
