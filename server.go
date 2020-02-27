@@ -40,7 +40,7 @@ func main() {
 		}
 		man.Date = time.Now().Format("02.01.2006 15:04:05")
 		man.Data = randomString(20)
-		fmt.Fprintf(w, "Name: %s\nDate: %s\nData: %s\n\n\n", man.Name, man.Date, man.Data)
+		//fmt.Fprintf(w, "Name: %s\nDate: %s\nData: %s\n\n\n", man.Name, man.Date, man.Data)
 
 		var jsonData []byte
 		jsonData, _ = json.Marshal(man)
