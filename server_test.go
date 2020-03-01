@@ -8,11 +8,8 @@ import (
     "net/http"
 	
 )
-//HealthCheckHandler аваыа
-
-
-//TestHealthCheckHandler тест
-func TestHealthCheckHandler(t *testing.T) {
+//TestServer тест
+func TestServer(t *testing.T) {
     srv := httptest.NewServer(handler())
     defer srv.Close()
     res, err := http.Get(fmt.Sprintf("%s/info?name=andrew", srv.URL))
