@@ -45,7 +45,6 @@ func handler() http.Handler {
 		var jsonData []byte
 		jsonData, _ = json.Marshal(man)
 		fmt.Fprintf(w, "%s", string(jsonData))
-
 	})
 	return mux
 }

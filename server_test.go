@@ -8,6 +8,8 @@ import (
     "net/http"
 	
 )
+
+
 //TestServer тест
 func TestServer(t *testing.T) {
     srv := httptest.NewServer(handler())
@@ -19,5 +21,4 @@ func TestServer(t *testing.T) {
     defer res.Body.Close()
     b,_ := ioutil.ReadAll(res.Body)
     fmt.Println(string(b))
-    
 }
