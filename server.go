@@ -1,7 +1,7 @@
 package main
 
 import (
-	//"encoding/json"
+	"encoding/json"
 	"fmt"
 	"math/rand"
 	"net/http"
@@ -40,11 +40,11 @@ func handler() http.Handler {
 		}
 		man.Date = string(time.Now().Format("02.01.2006 15:04:05"))
 		man.Data = randomString(20)
-		fmt.Fprintf(w, "Name: %s\nDate: %s\nData: %s\n\n\n", man.Name, man.Date, man.Data)
+		//fmt.Fprintf(w, "Name: %s\nDate: %s\nData: %s\n\n\n", man.Name, man.Date, man.Data)
 
-		// var jsonData []byte
-		// jsonData, _ = json.Marshal(man)
-		// fmt.Fprintf(w, "%s", string(jsonData))
+		var jsonData []byte
+		jsonData, _ = json.Marshal(man)
+		fmt.Fprintf(w, "%s", string(jsonData))
 
 	})
 	return mux
@@ -54,29 +54,3 @@ func main() {
 	fmt.Println("Starting...")
 	http.ListenAndServe(":8080", handler())
 }
-
-/*func main() {
-	mux := http.NewServeMux()
-	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hello from Server!")
-	})
-
-	mux.HandleFunc("/info", func(w http.ResponseWriter, r *http.Request) {
-		var man person
-		man.Name = r.URL.Query().Get("name")
-		if len(man.Name) == 0 {
-			man.Name = "anon"
-		}
-		man.Date = string(time.Now().Format("02.01.2006 15:04:05"))
-		man.Data = randomString(20)
-		fmt.Fprintf(w, "Name: %s\nDate: %s\nData: %s\n\n\n", man.Name, man.Date, man.Data)
-
-		// var jsonData []byte
-		// jsonData, _ = json.Marshal(man)
-		// fmt.Fprintf(w, "%s", string(jsonData))
-
-	})
-
-	fmt.Println("Starting...")
-	http.ListenAndServe("localhost:8080", mux) //msgHandler - интерфейс type Handler interface
-}*/
