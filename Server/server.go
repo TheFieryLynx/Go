@@ -42,7 +42,7 @@ func InfoHandler(w http.ResponseWriter, r *http.Request) {
 	if len(man.Name) == 0 {
 		man.Name = "anon"
 	}
-	man.Date = string(time.Now().Format("02.01.2006 15:04:05"))
+	man.Date = string(time.Now().Format("02.01.2006"))
 	man.Data = randomString(20)
 	//fmt.Fprintf(w, "Name: %s\nDate: %s\nData: %s\n\n\n", man.Name, man.Date, man.Data)
 
