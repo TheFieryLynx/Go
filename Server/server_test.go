@@ -49,7 +49,7 @@ type TestInfoHTTPHandler struct{}
 func (h *TestInfoHTTPHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	InfoHandler(w, r)
 }
-func TestInfoHandler1(t *testing.T) {
+func TestInfoHandler(t *testing.T) {
     h := &TestInfoHTTPHandler{}
     srv := httptest.NewServer(h)
     defer srv.Close()
