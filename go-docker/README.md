@@ -1,4 +1,4 @@
-##Server Docker
+## Server Docker
 
 1.  Для начала необходимо построить Dockerfile, если это не сделано
     *(Если он уже построен, переходим к п.2)*
@@ -24,7 +24,7 @@
 
 4.  Завершение 
 ``` go
-docker container stop CONTAINER ID
+    docker container stop CONTAINER ID
 ```
 
 **Если нет разрешений для команды docker, то нужно писать sudo перед каждой командой.**
