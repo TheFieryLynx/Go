@@ -10,8 +10,8 @@
 ```go
     docker run -d -p 8080:8080 go-docker
 ``` 
-    Docker присвоился CONTAINER ID  
-    Для просмотра всех ID работающих контейнеров:
+  *Docker присвоился CONTAINER ID  
+  Для просмотра всех ID работающих контейнеров:
 
 ```go
     docker container ls
