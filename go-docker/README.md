@@ -27,5 +27,4 @@
 docker container stop CONTAINER ID
 ```
 
-
 **Если нет разрешений для команды docker, то нужно писать sudo перед каждой командой.**
